@@ -1,0 +1,636 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F1298 `(v ~T0 @X0 0 tf ]
+[v F1300 `(v ~T0 @X0 0 tf1`*Cuc ]
+[v F1303 `(v ~T0 @X0 0 tf3`uc`uc`*Cuc ]
+[v F1308 `(v ~T0 @X0 0 tf4`uc`uc`i`uc ]
+[v F1314 `(v ~T0 @X0 0 tf ]
+[v F1316 `(uc ~T0 @X0 0 tf ]
+[v F1318 `(uc ~T0 @X0 0 tf ]
+"7 ./ihm.h
+[; ;./ihm.h: 7: {
+[s S139 `*F1298 1 `*F1300 1 `*F1303 1 `*F1308 1 `*F1314 1 `*F1316 1 `*F1318 1 ]
+[n S139 . init print printpos printv clr B0 B1 ]
+"9 ./dispLCD4vias.h
+[; ;./dispLCD4vias.h: 9: void dispLCD_init( void );
+[v _dispLCD_init `(v ~T0 @X0 0 ef ]
+"11
+[; ;./dispLCD4vias.h: 11: void dispLCDstr( const char * str );
+[v _dispLCDstr `(v ~T0 @X0 0 ef1`*Cuc ]
+"10
+[; ;./dispLCD4vias.h: 10: void dispLCD( unsigned char lin, unsigned char col, const char * str );
+[v _dispLCD `(v ~T0 @X0 0 ef3`uc`uc`*Cuc ]
+"12
+[; ;./dispLCD4vias.h: 12: void dispLCD_num( unsigned char lin, unsigned char col,
+[v _dispLCD_num `(v ~T0 @X0 0 ef4`uc`uc`i`uc ]
+"14
+[; ;./dispLCD4vias.h: 14: void dispLCD_clr( void );
+[v _dispLCD_clr `(v ~T0 @X0 0 ef ]
+"15
+[; ;./dispLCD4vias.h: 15: unsigned char dispLCD_B0( void );
+[v _dispLCD_B0 `(uc ~T0 @X0 0 ef ]
+"16
+[; ;./dispLCD4vias.h: 16: unsigned char dispLCD_B1( void );
+[v _dispLCD_B1 `(uc ~T0 @X0 0 ef ]
+[p mainexit ]
+"4 ./keypad.h
+[; ;./keypad.h: 4: void teclado_init( void );
+[v _teclado_init `(v ~T0 @X0 0 ef ]
+"5 ./sensor.h
+[; ;./sensor.h: 5: {
+[s S138 `i 1 `i 1 `i 1 ]
+[n S138 SensorTemperatura_t temp_C temp_K temp_F ]
+"11
+[; ;./sensor.h: 11: void sensor_init( int tmin, int tmax );
+[v _sensor_init `(v ~T0 @X0 0 ef2`i`i ]
+"5 ./keypad.h
+[; ;./keypad.h: 5: char teclado (void);
+[v _teclado `(uc ~T0 @X0 0 ef ]
+"4 ./delay.h
+[; ;./delay.h: 4: void delay (unsigned int t);
+[v _delay `(v ~T0 @X0 0 ef1`ui ]
+"12 ./sensor.h
+[; ;./sensor.h: 12: void temperatura( struct SensorTemperatura_t * ptr );
+[v _temperatura `(v ~T0 @X0 0 ef1`*S138 ]
+"9 ./config.h
+[p x FOSC = INTRC_NOCLKOUT ]
+"10
+[p x WDTE = OFF ]
+"11
+[p x PWRTE = OFF ]
+"12
+[p x MCLRE = OFF ]
+"13
+[p x CP = OFF ]
+"14
+[p x CPD = OFF ]
+"15
+[p x BOREN = OFF ]
+"16
+[p x IESO = OFF ]
+"17
+[p x FCMEN = OFF ]
+"18
+[p x LVP = OFF ]
+"21
+[p x BOR4V = BOR40V ]
+"22
+[p x WRT = OFF ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 54: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"61
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 61: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"68
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 68: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"75
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 75: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"161
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 161: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"168
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 168: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"230
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 230: __asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+"292
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 292: __asm("PORTC equ 07h");
+[; <" PORTC equ 07h ;# ">
+"354
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 354: __asm("PORTD equ 08h");
+[; <" PORTD equ 08h ;# ">
+"416
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 416: __asm("PORTE equ 09h");
+[; <" PORTE equ 09h ;# ">
+"454
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 454: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"461
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 461: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"539
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 539: __asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+"595
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 595: __asm("PIR2 equ 0Dh");
+[; <" PIR2 equ 0Dh ;# ">
+"652
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 652: __asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+"659
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 659: __asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+"666
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 666: __asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+"673
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 673: __asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+"767
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 767: __asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+"774
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 774: __asm("T2CON equ 012h");
+[; <" T2CON equ 012h ;# ">
+"845
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 845: __asm("SSPBUF equ 013h");
+[; <" SSPBUF equ 013h ;# ">
+"852
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 852: __asm("SSPCON equ 014h");
+[; <" SSPCON equ 014h ;# ">
+"922
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 922: __asm("CCPR1 equ 015h");
+[; <" CCPR1 equ 015h ;# ">
+"929
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 929: __asm("CCPR1L equ 015h");
+[; <" CCPR1L equ 015h ;# ">
+"936
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 936: __asm("CCPR1H equ 016h");
+[; <" CCPR1H equ 016h ;# ">
+"943
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 943: __asm("CCP1CON equ 017h");
+[; <" CCP1CON equ 017h ;# ">
+"1040
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1040: __asm("RCSTA equ 018h");
+[; <" RCSTA equ 018h ;# ">
+"1135
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1135: __asm("TXREG equ 019h");
+[; <" TXREG equ 019h ;# ">
+"1142
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1142: __asm("RCREG equ 01Ah");
+[; <" RCREG equ 01Ah ;# ">
+"1149
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1149: __asm("CCPR2 equ 01Bh");
+[; <" CCPR2 equ 01Bh ;# ">
+"1156
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1156: __asm("CCPR2L equ 01Bh");
+[; <" CCPR2L equ 01Bh ;# ">
+"1163
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1163: __asm("CCPR2H equ 01Ch");
+[; <" CCPR2H equ 01Ch ;# ">
+"1170
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1170: __asm("CCP2CON equ 01Dh");
+[; <" CCP2CON equ 01Dh ;# ">
+"1240
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1240: __asm("ADRESH equ 01Eh");
+[; <" ADRESH equ 01Eh ;# ">
+"1247
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1247: __asm("ADCON0 equ 01Fh");
+[; <" ADCON0 equ 01Fh ;# ">
+"1348
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1348: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"1418
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1418: __asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+"1480
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1480: __asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+"1542
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1542: __asm("TRISC equ 087h");
+[; <" TRISC equ 087h ;# ">
+"1604
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1604: __asm("TRISD equ 088h");
+[; <" TRISD equ 088h ;# ">
+"1666
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1666: __asm("TRISE equ 089h");
+[; <" TRISE equ 089h ;# ">
+"1704
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1704: __asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+"1760
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1760: __asm("PIE2 equ 08Dh");
+[; <" PIE2 equ 08Dh ;# ">
+"1817
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1817: __asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+"1864
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1864: __asm("OSCCON equ 08Fh");
+[; <" OSCCON equ 08Fh ;# ">
+"1929
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1929: __asm("OSCTUNE equ 090h");
+[; <" OSCTUNE equ 090h ;# ">
+"1981
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1981: __asm("SSPCON2 equ 091h");
+[; <" SSPCON2 equ 091h ;# ">
+"2043
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2043: __asm("PR2 equ 092h");
+[; <" PR2 equ 092h ;# ">
+"2050
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2050: __asm("SSPADD equ 093h");
+[; <" SSPADD equ 093h ;# ">
+"2057
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2057: __asm("SSPMSK equ 093h");
+[; <" SSPMSK equ 093h ;# ">
+"2062
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2062: __asm("MSK equ 093h");
+[; <" MSK equ 093h ;# ">
+"2179
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2179: __asm("SSPSTAT equ 094h");
+[; <" SSPSTAT equ 094h ;# ">
+"2348
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2348: __asm("WPUB equ 095h");
+[; <" WPUB equ 095h ;# ">
+"2418
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2418: __asm("IOCB equ 096h");
+[; <" IOCB equ 096h ;# ">
+"2488
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2488: __asm("VRCON equ 097h");
+[; <" VRCON equ 097h ;# ">
+"2558
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2558: __asm("TXSTA equ 098h");
+[; <" TXSTA equ 098h ;# ">
+"2644
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2644: __asm("SPBRG equ 099h");
+[; <" SPBRG equ 099h ;# ">
+"2706
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2706: __asm("SPBRGH equ 09Ah");
+[; <" SPBRGH equ 09Ah ;# ">
+"2776
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2776: __asm("PWM1CON equ 09Bh");
+[; <" PWM1CON equ 09Bh ;# ">
+"2846
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2846: __asm("ECCPAS equ 09Ch");
+[; <" ECCPAS equ 09Ch ;# ">
+"2928
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2928: __asm("PSTRCON equ 09Dh");
+[; <" PSTRCON equ 09Dh ;# ">
+"2972
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2972: __asm("ADRESL equ 09Eh");
+[; <" ADRESL equ 09Eh ;# ">
+"2979
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2979: __asm("ADCON1 equ 09Fh");
+[; <" ADCON1 equ 09Fh ;# ">
+"3013
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3013: __asm("WDTCON equ 0105h");
+[; <" WDTCON equ 0105h ;# ">
+"3066
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3066: __asm("CM1CON0 equ 0107h");
+[; <" CM1CON0 equ 0107h ;# ">
+"3131
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3131: __asm("CM2CON0 equ 0108h");
+[; <" CM2CON0 equ 0108h ;# ">
+"3196
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3196: __asm("CM2CON1 equ 0109h");
+[; <" CM2CON1 equ 0109h ;# ">
+"3247
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3247: __asm("EEDATA equ 010Ch");
+[; <" EEDATA equ 010Ch ;# ">
+"3252
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3252: __asm("EEDAT equ 010Ch");
+[; <" EEDAT equ 010Ch ;# ">
+"3259
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3259: __asm("EEADR equ 010Dh");
+[; <" EEADR equ 010Dh ;# ">
+"3266
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3266: __asm("EEDATH equ 010Eh");
+[; <" EEDATH equ 010Eh ;# ">
+"3273
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3273: __asm("EEADRH equ 010Fh");
+[; <" EEADRH equ 010Fh ;# ">
+"3280
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3280: __asm("SRCON equ 0185h");
+[; <" SRCON equ 0185h ;# ">
+"3337
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3337: __asm("BAUDCTL equ 0187h");
+[; <" BAUDCTL equ 0187h ;# ">
+"3389
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3389: __asm("ANSEL equ 0188h");
+[; <" ANSEL equ 0188h ;# ">
+"3451
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3451: __asm("ANSELH equ 0189h");
+[; <" ANSELH equ 0189h ;# ">
+"3501
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3501: __asm("EECON1 equ 018Ch");
+[; <" EECON1 equ 018Ch ;# ">
+"3546
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
+[; <" EECON2 equ 018Dh ;# ">
+"15 ./ihm.h
+[; ;./ihm.h: 15: } IHM = { dispLCD_init, dispLCDstr, dispLCD, dispLCD_num, dispLCD_clr, dispLCD_B0, dispLCD_B1 };
+[v _IHM `S139 ~T0 @X0 1 e ]
+[i _IHM
+:U ..
+:U ..
+&U _dispLCD_init
+&U _dispLCDstr
+&U _dispLCD
+&U _dispLCD_num
+&U _dispLCD_clr
+&U _dispLCD_B0
+&U _dispLCD_B1
+..
+..
+]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"18 main.c
+[; ;main.c: 18: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"19
+[; ;main.c: 19: {
+{
+[e :U _main ]
+[f ]
+"20
+[; ;main.c: 20:     char estado = 0;
+[v _estado `uc ~T0 @X0 1 a ]
+[e = _estado -> -> 0 `i `uc ]
+"21
+[; ;main.c: 21:     char tecla;
+[v _tecla `uc ~T0 @X0 1 a ]
+"22
+[; ;main.c: 22:     dispLCD_init();
+[e ( _dispLCD_init ..  ]
+"23
+[; ;main.c: 23:     teclado_init();
+[e ( _teclado_init ..  ]
+"25
+[; ;main.c: 25:     struct SensorTemperatura_t sensor;
+[v _sensor `S138 ~T0 @X0 1 a ]
+"26
+[; ;main.c: 26:     sensor_init(-50,150);
+[e ( _sensor_init (2 , -U -> 50 `i -> 150 `i ]
+"28
+[; ;main.c: 28:     while (1)
+[e :U 142 ]
+"29
+[; ;main.c: 29:     {
+{
+"30
+[; ;main.c: 30:         tecla = teclado();
+[e = _tecla ( _teclado ..  ]
+"32
+[; ;main.c: 32:         switch( estado )
+[e $U 145  ]
+"33
+[; ;main.c: 33:         {
+{
+"34
+[; ;main.c: 34:             case 0: estado = 1;
+[e :U 146 ]
+[e = _estado -> -> 1 `i `uc ]
+"35
+[; ;main.c: 35:                     break;
+[e $U 144  ]
+"37
+[; ;main.c: 37:             case 1: dispLCD(0,0,"    WELCOME     ");
+[e :U 147 ]
+[e ( _dispLCD (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 1C ]
+"38
+[; ;main.c: 38:                     delay(2000);
+[e ( _delay (1 -> -> 2000 `i `ui ]
+"39
+[; ;main.c: 39:                     dispLCD_clr();
+[e ( _dispLCD_clr ..  ]
+"40
+[; ;main.c: 40:                     estado = 10;
+[e = _estado -> -> 10 `i `uc ]
+"41
+[; ;main.c: 41:                     break;
+[e $U 144  ]
+"43
+[; ;main.c: 43:             case 10: dispLCD(0,0," TeRtoS PrOjEcT ");
+[e :U 148 ]
+[e ( _dispLCD (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 2C ]
+"44
+[; ;main.c: 44:                      delay(2000);
+[e ( _delay (1 -> -> 2000 `i `ui ]
+"45
+[; ;main.c: 45:                      dispLCD_clr();
+[e ( _dispLCD_clr ..  ]
+"46
+[; ;main.c: 46:                      estado = 15;
+[e = _estado -> -> 15 `i `uc ]
+"47
+[; ;main.c: 47:                      break;
+[e $U 144  ]
+"49
+[; ;main.c: 49:             case 15: dispLCD(0,0,"1:Inst   C:Manut");
+[e :U 149 ]
+[e ( _dispLCD (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 3C ]
+"51
+[; ;main.c: 51:                      dispLCD(1,0,"Temp:     C        ");
+[e ( _dispLCD (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 4C ]
+"52
+[; ;main.c: 52:                      temperatura( &sensor );
+[e ( _temperatura (1 &U _sensor ]
+"53
+[; ;main.c: 53:                      dispLCD_num(1, 6, sensor.temp_C, 4 );
+[e ( _dispLCD_num (4 , , , -> -> 1 `i `uc -> -> 6 `i `uc . _sensor 0 -> -> 4 `i `uc ]
+"54
+[; ;main.c: 54:                      estado = 16;
+[e = _estado -> -> 16 `i `uc ]
+"55
+[; ;main.c: 55:                      break;
+[e $U 144  ]
+"57
+[; ;main.c: 57:             case 16: dispLCD_num(1, 6, sensor.temp_C, 4 );
+[e :U 150 ]
+[e ( _dispLCD_num (4 , , , -> -> 1 `i `uc -> -> 6 `i `uc . _sensor 0 -> -> 4 `i `uc ]
+"58
+[; ;main.c: 58:                      if(sensor.temp_C > 100)
+[e $ ! > . _sensor 0 -> 100 `i 151  ]
+"59
+[; ;main.c: 59:                      {
+{
+"60
+[; ;main.c: 60:                          dispLCD_clr();
+[e ( _dispLCD_clr ..  ]
+"61
+[; ;main.c: 61:                          dispLCD(0, 0, "     ALERTA     ");
+[e ( _dispLCD (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 5C ]
+"62
+[; ;main.c: 62:                          dispLCD(1, 0, "TEMPERATURA ALTA");
+[e ( _dispLCD (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 6C ]
+"63
+[; ;main.c: 63:                          estado = 17;
+[e = _estado -> -> 17 `i `uc ]
+"64
+[; ;main.c: 64:                      }
+}
+[e :U 151 ]
+"66
+[; ;main.c: 66:                      if(sensor.temp_C < 20 )
+[e $ ! < . _sensor 0 -> 20 `i 152  ]
+"67
+[; ;main.c: 67:                      {
+{
+"68
+[; ;main.c: 68:                          dispLCD_clr();
+[e ( _dispLCD_clr ..  ]
+"69
+[; ;main.c: 69:                          dispLCD(0, 0, "     ALERTA     ");
+[e ( _dispLCD (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 7C ]
+"70
+[; ;main.c: 70:                          dispLCD(1, 0, "TEMPERATURA BAIX");
+[e ( _dispLCD (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 8C ]
+"71
+[; ;main.c: 71:                          estado = 18;
+[e = _estado -> -> 18 `i `uc ]
+"72
+[; ;main.c: 72:                      }
+}
+[e :U 152 ]
+"74
+[; ;main.c: 74:                      if(tecla == '1')
+[e $ ! == -> _tecla `ui -> 49 `ui 153  ]
+"75
+[; ;main.c: 75:                      {
+{
+"76
+[; ;main.c: 76:                          dispLCD_clr();
+[e ( _dispLCD_clr ..  ]
+"77
+[; ;main.c: 77:                          estado = 20;
+[e = _estado -> -> 20 `i `uc ]
+"78
+[; ;main.c: 78:                      }
+}
+[e :U 153 ]
+"79
+[; ;main.c: 79:                      if(tecla == 'C')
+[e $ ! == -> _tecla `ui -> 67 `ui 154  ]
+"80
+[; ;main.c: 80:                      {
+{
+"81
+[; ;main.c: 81:                          dispLCD_clr();
+[e ( _dispLCD_clr ..  ]
+"82
+[; ;main.c: 82:                          estado = 100;
+[e = _estado -> -> 100 `i `uc ]
+"83
+[; ;main.c: 83:                      }
+}
+[e :U 154 ]
+"84
+[; ;main.c: 84:                      break;
+[e $U 144  ]
+"86
+[; ;main.c: 86:             case 17: temperatura( &sensor );
+[e :U 155 ]
+[e ( _temperatura (1 &U _sensor ]
+"87
+[; ;main.c: 87:                      if(sensor.temp_C < 100)
+[e $ ! < . _sensor 0 -> 100 `i 156  ]
+"88
+[; ;main.c: 88:                      {
+{
+"89
+[; ;main.c: 89:                          dispLCD_clr();
+[e ( _dispLCD_clr ..  ]
+"90
+[; ;main.c: 90:                          estado = 15;
+[e = _estado -> -> 15 `i `uc ]
+"91
+[; ;main.c: 91:                      }
+}
+[e :U 156 ]
+"92
+[; ;main.c: 92:                      break;
+[e $U 144  ]
+"94
+[; ;main.c: 94:             case 18: temperatura( &sensor );
+[e :U 157 ]
+[e ( _temperatura (1 &U _sensor ]
+"95
+[; ;main.c: 95:                      if(sensor.temp_C > 20)
+[e $ ! > . _sensor 0 -> 20 `i 158  ]
+"96
+[; ;main.c: 96:                      {
+{
+"97
+[; ;main.c: 97:                          dispLCD_clr();
+[e ( _dispLCD_clr ..  ]
+"98
+[; ;main.c: 98:                          estado = 15;
+[e = _estado -> -> 15 `i `uc ]
+"99
+[; ;main.c: 99:                      }
+}
+[e :U 158 ]
+"100
+[; ;main.c: 100:                      break;
+[e $U 144  ]
+"102
+[; ;main.c: 102:             case 20: dispLCD(0,0,"   Instalacao   ");
+[e :U 159 ]
+[e ( _dispLCD (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 9C ]
+"103
+[; ;main.c: 103:                      if(tecla == '*')
+[e $ ! == -> _tecla `ui -> 42 `ui 160  ]
+"104
+[; ;main.c: 104:                      {
+{
+"105
+[; ;main.c: 105:                          dispLCD_clr();
+[e ( _dispLCD_clr ..  ]
+"106
+[; ;main.c: 106:                          estado = 15;
+[e = _estado -> -> 15 `i `uc ]
+"107
+[; ;main.c: 107:                      }
+}
+[e :U 160 ]
+"108
+[; ;main.c: 108:                      break;
+[e $U 144  ]
+"110
+[; ;main.c: 110:             case 100:dispLCD(0,0,"   Manutencao   ");
+[e :U 161 ]
+[e ( _dispLCD (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 10C ]
+"111
+[; ;main.c: 111:                      if(tecla == '*')
+[e $ ! == -> _tecla `ui -> 42 `ui 162  ]
+"112
+[; ;main.c: 112:                          estado = 15;
+[e = _estado -> -> 15 `i `uc ]
+[e :U 162 ]
+"113
+[; ;main.c: 113:                      break;
+[e $U 144  ]
+"114
+[; ;main.c: 114:         }
+}
+[e $U 144  ]
+[e :U 145 ]
+[e [\ -> _estado `i , $ -> 0 `i 146
+ , $ -> 1 `i 147
+ , $ -> 10 `i 148
+ , $ -> 15 `i 149
+ , $ -> 16 `i 150
+ , $ -> 17 `i 155
+ , $ -> 18 `i 157
+ , $ -> 20 `i 159
+ , $ -> 100 `i 161
+ 144 ]
+[e :U 144 ]
+"116
+[; ;main.c: 116:         temperatura( &sensor );
+[e ( _temperatura (1 &U _sensor ]
+"118
+[; ;main.c: 118:     }
+}
+[e :U 141 ]
+[e $U 142  ]
+[e :U 143 ]
+"122
+[; ;main.c: 122:     return;
+[e $UE 140  ]
+"123
+[; ;main.c: 123: }
+[e :UE 140 ]
+}
+[a 3C 49 58 73 110 115 116 32 32 32 67 58 77 97 110 117 116 0 ]
+[a 8C 84 69 77 80 69 82 65 84 85 82 65 32 66 65 73 88 0 ]
+[a 6C 84 69 77 80 69 82 65 84 85 82 65 32 65 76 84 65 0 ]
+[a 2C 32 84 101 82 116 111 83 32 80 114 79 106 69 99 84 32 0 ]
+[a 10C 32 32 32 77 97 110 117 116 101 110 99 97 111 32 32 32 0 ]
+[a 9C 32 32 32 73 110 115 116 97 108 97 99 97 111 32 32 32 0 ]
+[a 1C 32 32 32 32 87 69 76 67 79 77 69 32 32 32 32 32 0 ]
+[a 5C 32 32 32 32 32 65 76 69 82 84 65 32 32 32 32 32 0 ]
+[a 7C 32 32 32 32 32 65 76 69 82 84 65 32 32 32 32 32 0 ]
+[a 4C 84 101 109 112 58 32 32 32 32 32 67 32 32 32 32 32 32 32 32 0 ]
